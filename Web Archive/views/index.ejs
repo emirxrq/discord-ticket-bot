@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SrcProject Ticket Arşivi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cookie&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./styles/index.css">
+
+</head>
+
+<body>
+    <div class="channelInfo">
+        <img src="img/eski.png" alt="">
+        <div class="channelInfoSection">
+            <h2 class="srcProjectTitle">SrcProject</h2>
+            <p class="channelName">#<%= ticket.channelName %>
+            </p>
+            <p class="channelStart">Burası #<%= ticket.channelName %> kanalının başlangıcı.</p>
+        </div>
+    </div>
+    <div class="messages">
+        <div class="message">
+            <div class="avatar">
+                <img src="img/eski.png" alt="">
+            </div>
+            <div class="messageContent">
+                <div class="messageInfo">
+                    <p class="messageAuthor">
+                        SrcProject
+                    </p>
+                    <p class="messageTimestamp">
+                        <%= ticket.createdAt %>
+                    </p>
+                </div>
+                <div class="embedMessage">
+                    <p class="title"> <%= ticket.topic.charAt(0).toUpperCase() + ticket.topic.substring(1).toLowerCase() %>  </p>
+                    <p> Merhaba size nasıl yardımcı olabiliriz? </p>
+                    <p class="closeCommand">Talebi kapatmak için /kapat</p>
+                </div>
+                <button class="closeBtn" style="margin-top: 5px;">Kapat</button>
+            </div>
+        </div>
+        <% messages.forEach(message=> { %>
+
+            <div class="message">
+                <div class="avatar">
+                    <img src=<%=message.authorAvatar %> alt="">
+                </div>
+                <div class="messageContent">
+                    <div class="messageInfo">
+                        <p class="messageAuthor">
+                            <%= message.author %>
+                        </p>
+                        <p class="messageTimestamp">
+                            <%= message.timestamp %>
+                        </p>
+                    </div>
+                    <p>
+                        <%= message.content %>
+                    </p>
+                </div>
+            </div>
+
+            <% }); %>
+    </div>
+</body>
+
+</html>
