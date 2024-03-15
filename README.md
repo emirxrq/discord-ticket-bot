@@ -5,4 +5,4 @@ Developed using Nodejs, HTML, CSS, MongoDB.
 
 You can edit both the web archive project and the project where the bot is located from the config.js files according to your needs. Have a nice day.
 
-My Discord: ***emirerenn***
+My Discord: ***emirxrq***
